@@ -43,9 +43,9 @@ public class LoginActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.password);
 
         if (password.getText().toString().equals("testpassword")) {
-            Toast.makeText(getApplicationContext(), "Login success", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Login success", Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(getApplicationContext(), "Wrong password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Wrong password", Toast.LENGTH_LONG).show();
         }
 
     }
