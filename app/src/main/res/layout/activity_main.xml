@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/Background"
+    >
 
 
     <TextView
@@ -26,55 +28,46 @@
         android:id="@+id/TL_button"
         android:layout_width="190dp"
         android:layout_height="200dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="11dp"
         android:background="@drawable/top_left_button"
         android:onClick="Login_user1"
         android:text="User 1"
         android:textAllCaps="false"
         android:textColor="@color/OffWhite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintBottom_toTopOf="@+id/BL_button"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <Button
         android:id="@+id/TR_button"
         android:layout_width="190dp"
         android:layout_height="200dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="11dp"
         android:background="@drawable/top_right_button"
         android:onClick="Login_user2"
         android:text="User 2"
         android:textAllCaps="false"
         android:textColor="@color/OffWhite"
-        app:layout_constraintBottom_toBottomOf="@+id/BR_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.43" />
+        app:layout_constraintBottom_toTopOf="@+id/BR_button"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/BL_button"
         android:layout_width="190dp"
         android:layout_height="200dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/bottom_left_button"
         android:onClick="Login_user3"
         android:text="User 3"
         android:textAllCaps="false"
         android:textColor="@color/OffWhite"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent" />
 
 
@@ -82,17 +75,16 @@
         android:id="@+id/BR_button"
         android:layout_width="190dp"
         android:layout_height="200dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/bottom_right_button"
         android:onClick="Login_user4"
         android:text="User 4"
         android:textAllCaps="false"
         android:textColor="@color/OffWhite"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_chainStyle="packed" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
