@@ -5,13 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.pandora.ItemsActivity">
-    
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="80dp"
+        android:background="@color/Background"
         android:padding="4dp"
-        android:background="@color/Background"/>
+        android:scrollbars="vertical" />
+
+    <Button
+        android:id="@+id/insert_button"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/OffWhite"
+        android:text="Add new Item"
+        android:textAllCaps="false"/>
 
 
 </RelativeLayout>

@@ -12,6 +12,10 @@ public class StoredItem {
         mDescription = description;
     }
 
+    public void changeName(String name){
+        mName = name;
+    }
+
     public int getImageResource(){
         return mImageResource;
     }
