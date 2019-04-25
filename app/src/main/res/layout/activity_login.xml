@@ -23,10 +23,26 @@
             android:textSize="40sp" />
 
         <TextView
-            android:id="@+id/Information"
+            android:id="@+id/User_Information"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="User information \n last opening \n etc..."
+            android:text="User information"
+            android:textColor="@color/OffWhite"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Opening_Information"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last opening"
+            android:textColor="@color/OffWhite"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Other_Information"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other informations"
             android:textColor="@color/OffWhite"
             android:textSize="20sp" />
 
