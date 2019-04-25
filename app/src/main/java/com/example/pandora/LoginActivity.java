@@ -1,5 +1,7 @@
 package com.example.pandora;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,9 +14,6 @@ import android.widget.Toast;
 
 
 public class LoginActivity extends AppCompatActivity {
-
-    private static final String USERNAME = "Username";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +43,12 @@ public class LoginActivity extends AppCompatActivity {
 
         if (password.getText().toString().equals("testpassword")) {
             Toast.makeText(getApplicationContext(), "Login success", Toast.LENGTH_LONG).show();
+
+            Intent intent = new Intent(this, ItemsActivity.class);
+
+            startActivity(intent);
+
+
         } else {
             Toast.makeText(getApplicationContext(), "Wrong password", Toast.LENGTH_LONG).show();
         }
