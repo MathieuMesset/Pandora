@@ -15,6 +15,7 @@
         android:padding="50dp">
 
         <TextView
+            android:id="@+id/Username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="User name"
@@ -22,6 +23,7 @@
             android:textSize="40sp" />
 
         <TextView
+            android:id="@+id/Information"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="User information \n last opening \n etc..."
