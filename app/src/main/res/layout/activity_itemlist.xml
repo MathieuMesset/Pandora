@@ -15,15 +15,45 @@
         android:padding="4dp"
         android:scrollbars="vertical" />
 
+    <EditText
+        android:id="@+id/new_item_name"
+        android:layout_width="206dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/insert_button"
+        android:background="@color/colorAccent"
+        android:hint="Name"
+        android:inputType="text"
+        android:padding="5dp"
+        android:textColor="@color/OffWhite"
+        android:textCursorDrawable="@null"
+        android:textColorHint="@color/colorPrimary"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/new_item_description"
+        android:layout_width="206dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/insert_button"
+        android:layout_alignEnd="@+id/recyclerView"
+        android:layout_alignRight="@+id/recyclerView"
+        android:background="@color/colorAccent"
+        android:hint="Description"
+        android:inputType="text"
+        android:padding="5dp"
+        android:textColor="@color/OffWhite"
+        android:textColorHint="@color/colorPrimary"
+        android:textCursorDrawable="@null"
+        android:gravity="center"/>
+
     <Button
         android:id="@+id/insert_button"
         android:layout_width="fill_parent"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"
-        android:textColor="@color/OffWhite"
         android:text="Add new Item"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false"
+        android:textColor="@color/OffWhite" />
 
 
 </RelativeLayout>
