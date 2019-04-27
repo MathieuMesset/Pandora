@@ -5,27 +5,40 @@ public class StoredItem {
     private int mImageResource;
     private String mName;
     private String mDescription;
+    private boolean mDelete;
 
-    public StoredItem(int imageResource, String name, String description) {
+    public StoredItem(int imageResource, String name, String description, boolean delete) {
         mImageResource = imageResource;
         mName = name;
         mDescription = description;
+        mDelete = delete;
     }
 
-    public void changeName(String name){
-        mName = name;
+    public void changeDeleteState() {
+        if(mDelete == true){
+            mDelete = false;
+        }else {
+            mDelete = true;
+        }
+
+        mName =toString().valueOf(mDelete);
+
     }
 
-    public int getImageResource(){
+    public int getImageResource() {
         return mImageResource;
     }
 
-    public  String getName(){
+    public String getName() {
         return mName;
     }
 
-    public String getDescription(){
+    public String getDescription() {
         return mDescription;
+    }
+
+    public boolean getDeleteState(){
+        return mDelete;
     }
 
 }

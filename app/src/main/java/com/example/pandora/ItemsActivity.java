@@ -1,6 +1,7 @@
 package com.example.pandora;
 
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -43,7 +44,7 @@ public class ItemsActivity extends AppCompatActivity {
     }
 
     public void insertItem(int position, String itemName, String itemDescription) {
-        mStoredList.add(position, new StoredItem(R.drawable.ic_android, "" + itemName, "" + itemDescription));
+        mStoredList.add(position, new StoredItem(R.drawable.ic_android, "" + itemName, "" + itemDescription, false));
         mAdapter.notifyItemInserted(position);
     }
 
@@ -52,9 +53,15 @@ public class ItemsActivity extends AppCompatActivity {
         mAdapter.notifyItemRemoved(position);
     }
 
-    public void changeItem(int position, String text) {
-        mStoredList.get(position).changeName(text);
-        mAdapter.notifyItemChanged(position);
+    public void changeItem(int position, ImageView deleteImage) {
+        mStoredList.get(position).changeDeleteState();
+        boolean deleteState = mStoredList.get(position).getDeleteState();
+        if (deleteState == false) {
+            deleteImage.setVisibility(View.INVISIBLE);
+        } else if(deleteState == true){
+            deleteImage.setVisibility(View.VISIBLE);
+        }
+        mAdapter.notifyItemChanged(position,deleteImage);
     }
 
 
@@ -75,10 +82,8 @@ public class ItemsActivity extends AppCompatActivity {
 
         mAdapter.setOnItemClickListener(new StoredAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(int position) {
-                changeItem(position, "Clicked");
-                //TO DO hide and show delete button
-
+            public void onItemClick(int position, ImageView deleteImage) {
+                changeItem(position, deleteImage);
             }
 
             @Override

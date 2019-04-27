@@ -17,7 +17,8 @@ public class StoredAdapter extends RecyclerView.Adapter<StoredAdapter.StoredView
     private OnItemClickListener mListener;
 
     public interface OnItemClickListener {
-        void onItemClick(int position);
+        void onItemClick(int position, ImageView deleteImage);
+
         void onDeleteClick(int position);
     }
 
@@ -32,6 +33,7 @@ public class StoredAdapter extends RecyclerView.Adapter<StoredAdapter.StoredView
         public TextView mName;
         public TextView mDescription;
         public ImageView mDeleteImage;
+        public boolean mDeleteState;
 
         public StoredViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
@@ -43,10 +45,10 @@ public class StoredAdapter extends RecyclerView.Adapter<StoredAdapter.StoredView
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(listener != null){
+                    if (listener != null) {
                         int position = getAdapterPosition();
-                        if(position != RecyclerView.NO_POSITION){
-                            listener.onItemClick(position);
+                        if (position != RecyclerView.NO_POSITION) {
+                            listener.onItemClick(position, mDeleteImage);
                         }
                     }
                 }
@@ -55,9 +57,9 @@ public class StoredAdapter extends RecyclerView.Adapter<StoredAdapter.StoredView
             mDeleteImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(listener != null){
+                    if (listener != null) {
                         int position = getAdapterPosition();
-                        if(position != RecyclerView.NO_POSITION){
+                        if (position != RecyclerView.NO_POSITION) {
                             listener.onDeleteClick(position);
                         }
                     }
@@ -76,7 +78,7 @@ public class StoredAdapter extends RecyclerView.Adapter<StoredAdapter.StoredView
     @Override
     public StoredViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.stored_item, viewGroup, false);
-        StoredViewHolder svh = new StoredViewHolder(v,mListener);
+        StoredViewHolder svh = new StoredViewHolder(v, mListener);
         return svh;
     }
 
@@ -88,6 +90,12 @@ public class StoredAdapter extends RecyclerView.Adapter<StoredAdapter.StoredView
         storedViewHolder.mImageView.setImageResource(currentItem.getImageResource());
         storedViewHolder.mName.setText(currentItem.getName());
         storedViewHolder.mDescription.setText(currentItem.getDescription());
+        storedViewHolder.mDeleteState = (currentItem.getDeleteState());
+        if (storedViewHolder.mDeleteState == true){
+            storedViewHolder.mDeleteImage.setVisibility(View.VISIBLE);
+        }else if (storedViewHolder.mDeleteState == false){
+            storedViewHolder.mDeleteImage.setVisibility(View.INVISIBLE);
+        }
     }
 
     @Override
