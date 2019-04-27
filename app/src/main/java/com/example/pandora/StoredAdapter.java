@@ -90,10 +90,9 @@ public class StoredAdapter extends RecyclerView.Adapter<StoredAdapter.StoredView
         storedViewHolder.mImageView.setImageResource(currentItem.getImageResource());
         storedViewHolder.mName.setText(currentItem.getName());
         storedViewHolder.mDescription.setText(currentItem.getDescription());
-        storedViewHolder.mDeleteState = (currentItem.getDeleteState());
-        if (storedViewHolder.mDeleteState == true){
+        if (currentItem.getDeleteState() == true){
             storedViewHolder.mDeleteImage.setVisibility(View.VISIBLE);
-        }else if (storedViewHolder.mDeleteState == false){
+        }else if (currentItem.getDeleteState() == false){
             storedViewHolder.mDeleteImage.setVisibility(View.INVISIBLE);
         }
     }

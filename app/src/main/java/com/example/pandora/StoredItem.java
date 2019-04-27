@@ -20,9 +20,6 @@ public class StoredItem {
         }else {
             mDelete = true;
         }
-
-        mName =toString().valueOf(mDelete);
-
     }
 
     public int getImageResource() {
