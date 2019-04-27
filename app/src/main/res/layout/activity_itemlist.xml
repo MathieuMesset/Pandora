@@ -5,13 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.pandora.ItemsActivity">
-    
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="120dp"
+        android:background="@color/Background"
         android:padding="4dp"
-        android:background="@color/Background"/>
+        android:scrollbars="vertical" />
+
+    <EditText
+        android:id="@+id/new_item_name"
+        android:layout_width="206dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/insert_button"
+        android:background="@color/colorAccent"
+        android:hint="Name"
+        android:inputType="text"
+        android:padding="5dp"
+        android:textColor="@color/OffWhite"
+        android:textCursorDrawable="@null"
+        android:textColorHint="@color/colorPrimary"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/new_item_description"
+        android:layout_width="206dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/insert_button"
+        android:layout_alignEnd="@+id/recyclerView"
+        android:layout_alignRight="@+id/recyclerView"
+        android:background="@color/colorAccent"
+        android:hint="Description"
+        android:inputType="text"
+        android:padding="5dp"
+        android:textColor="@color/OffWhite"
+        android:textColorHint="@color/colorPrimary"
+        android:textCursorDrawable="@null"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/insert_button"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="Add new Item"
+        android:textAllCaps="false"
+        android:textColor="@color/OffWhite" />
 
 
 </RelativeLayout>
